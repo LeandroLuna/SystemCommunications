@@ -9,4 +9,5 @@ import database "github.com/LeandroLuna/SystemCommunications/GraphQL/internal/da
 
 type Resolver struct {
 	CategoryDB *database.Category
+	CourseDB   *database.Course
 }
