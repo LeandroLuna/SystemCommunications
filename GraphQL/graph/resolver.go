@@ -1,7 +1,7 @@
 package graph
 
 // import database "command-line-arguments/Users/leandroluna/Documents/Github/FullCycle/SystemCommunications/GraphQL/internal/database/category.go"
-import database "github.com/SystemCommunications/GraphQL/internal/database"
+import database "github.com/leandroluna/SystemCommunications/GraphQL/internal/database"
 
 // This file will not be regenerated automatically.
 //
