@@ -1,6 +1,6 @@
 # SystemCommunications
 
-## Communication Synchronous and Asynchronous
+## Comunicação Síncrona e Assíncona
 
 Comunicação síncrona e assíncrona são dois tipos de interações que ocorrem entre sistemas, dispositivos ou pessoas. A diferença fundamental entre eles está no momento em que a troca de informações acontece.
 
