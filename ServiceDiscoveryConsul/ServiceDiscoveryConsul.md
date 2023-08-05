@@ -19,21 +19,21 @@ O Service Registry é um componente essencial em arquiteturas de microservices e
 
 ### Benefícios do Service Registry:
 
-1. Descoberta de Serviço Dinâmica: O Service Registry permite que os serviços sejam descobertos de forma dinâmica e automática. Os clientes não precisam ter conhecimento prévio sobre a localização ou o número de instâncias de um serviço, pois podem consultar o registro de serviço para obter informações atualizadas sobre os serviços disponíveis.
+- Descoberta de Serviço Dinâmica: O Service Registry permite que os serviços sejam descobertos de forma dinâmica e automática. Os clientes não precisam ter conhecimento prévio sobre a localização ou o número de instâncias de um serviço, pois podem consultar o registro de serviço para obter informações atualizadas sobre os serviços disponíveis.
 
-2. Tolerância a Falhas: Em ambientes distribuídos, as instâncias de serviço podem ser implantadas e removidas dinamicamente devido a falhas ou atualizações. O Service Registry ajuda a garantir que os clientes continuem a encontrar e se conectar a serviços que estejam em funcionamento, mesmo diante de falhas temporárias ou mudanças na infraestrutura.
+- Tolerância a Falhas: Em ambientes distribuídos, as instâncias de serviço podem ser implantadas e removidas dinamicamente devido a falhas ou atualizações. O Service Registry ajuda a garantir que os clientes continuem a encontrar e se conectar a serviços que estejam em funcionamento, mesmo diante de falhas temporárias ou mudanças na infraestrutura.
 
-3. Balanceamento de Carga: O registro de serviço pode ser combinado com um balanceador de carga para distribuir o tráfego entre várias instâncias de um serviço, melhorando a escalabilidade e a eficiência dos recursos.
+- Balanceamento de Carga: O registro de serviço pode ser combinado com um balanceador de carga para distribuir o tráfego entre várias instâncias de um serviço, melhorando a escalabilidade e a eficiência dos recursos.
 
 ### Como o Consul implementa o Service Registry?
 
 O Consul fornece uma solução completa de Service Registry para ambientes distribuídos. Aqui está um resumo de como ele funciona:
 
-1. Registro de Serviço: Quando um serviço é implantado, ele se registra no Consul, informando seu nome, ID, endereço IP, porta e outras informações relevantes. O Consul então armazena essas informações no registro de serviço.
+- Registro de Serviço: Quando um serviço é implantado, ele se registra no Consul, informando seu nome, ID, endereço IP, porta e outras informações relevantes. O Consul então armazena essas informações no registro de serviço.
 
-2. Descoberta de Serviço: Os clientes que desejam se conectar a um serviço específico podem consultar o Consul para obter informações sobre o serviço desejado. O Consul fornece a lista de instâncias do serviço e seus detalhes, como endereços IP e portas, permitindo que os clientes se conectem de forma transparente.
+- Descoberta de Serviço: Os clientes que desejam se conectar a um serviço específico podem consultar o Consul para obter informações sobre o serviço desejado. O Consul fornece a lista de instâncias do serviço e seus detalhes, como endereços IP e portas, permitindo que os clientes se conectem de forma transparente.
 
-3. Monitoramento de Saúde: O Consul também fornece um recurso de monitoramento de saúde, onde os serviços podem registrar seu status de integridade. Se um serviço falhar ou se tornar indisponível, o Consul remove automaticamente essa instância do registro de serviço, garantindo que os clientes não tentem acessá-la.
+- Monitoramento de Saúde: O Consul também fornece um recurso de monitoramento de saúde, onde os serviços podem registrar seu status de integridade. Se um serviço falhar ou se tornar indisponível, o Consul remove automaticamente essa instância do registro de serviço, garantindo que os clientes não tentem acessá-la.
 
 ## Health Check (Verificação de Saúde):
 
@@ -49,32 +49,29 @@ Multicloud refere-se à prática de usar mais de um provedor de serviços de nuv
 
 Existem várias razões pelas quais uma organização pode optar pelo multicloud:
 
-1. Redundância e Resiliência: Ao distribuir serviços e recursos em múltiplas nuvens, a organização aumenta sua resiliência a falhas. Se um provedor de nuvem sofrer uma interrupção, o tráfego e as cargas de trabalho podem ser redirecionados para outro provedor.
+- Redundância e Resiliência: Ao distribuir serviços e recursos em múltiplas nuvens, a organização aumenta sua resiliência a falhas. Se um provedor de nuvem sofrer uma interrupção, o tráfego e as cargas de trabalho podem ser redirecionados para outro provedor.
 
-2. Evitar Vendor Lock-in: O uso de várias nuvens pode ajudar a evitar a dependência exclusiva de um único provedor, o que pode dificultar a mudança de provedor ou limitar a negociação de preços.
+- Evitar Vendor Lock-in: O uso de várias nuvens pode ajudar a evitar a dependência exclusiva de um único provedor, o que pode dificultar a mudança de provedor ou limitar a negociação de preços.
 
-3. Otimização de Custo: O multicloud permite que as organizações comparem preços e desempenho entre diferentes provedores e escolham a melhor combinação para atender às suas necessidades e orçamentos.
+- Otimização de Custo: O multicloud permite que as organizações comparem preços e desempenho entre diferentes provedores e escolham a melhor combinação para atender às suas necessidades e orçamentos.
 
-4. Conformidade e Jurisdição de Dados: Algumas organizações podem precisar aderir a regulamentações específicas de conformidade de dados e preferem hospedar certos serviços em provedores que estejam em jurisdições específicas.
+- Conformidade e Jurisdição de Dados: Algumas organizações podem precisar aderir a regulamentações específicas de conformidade de dados e preferem hospedar certos serviços em provedores que estejam em jurisdições específicas.
 
-5. Flexibilidade e Escolha: Com o multicloud, as organizações têm mais flexibilidade para adotar as tecnologias e serviços específicos de cada provedor que melhor se encaixem em seus requisitos.
+- Flexibilidade e Escolha: Com o multicloud, as organizações têm mais flexibilidade para adotar as tecnologias e serviços específicos de cada provedor que melhor se encaixem em seus requisitos.
 
 ## Agent, Client e Server
 
 Em uma infraestrutura distribuída e arquitetura de microservices, os termos "agent", "client" e "server" são frequentemente usados para descrever diferentes componentes que desempenham papéis específicos. Vamos entender o significado de cada um deles:
 
-1. Agent (Agente):
-Um agente é um componente de software que executa em cada nó ou host de uma infraestrutura distribuída. Sua função é coletar informações locais, como métricas do sistema, saúde do serviço e outras informações relevantes, e compartilhá-las com um sistema de gerenciamento centralizado, como o Consul, Prometheus ou outros.
+- Agent (Agente): Um agente é um componente de software que executa em cada nó ou host de uma infraestrutura distribuída. Sua função é coletar informações locais, como métricas do sistema, saúde do serviço e outras informações relevantes, e compartilhá-las com um sistema de gerenciamento centralizado, como o Consul, Prometheus ou outros.
 
 No contexto do Consul, o agente do Consul é executado em cada nó e é responsável por manter a comunicação entre os nós do cluster, participar na descoberta de serviços, executar verificações de saúde e outras tarefas necessárias para manter o cluster em funcionamento.
 
-2. Client (Cliente):
-Em uma arquitetura cliente/servidor, o cliente é um componente que solicita serviços ou recursos a um servidor. No contexto do Consul, o termo "cliente" refere-se aos serviços ou aplicativos que utilizam o Consul para descoberta de serviço e balanceamento de carga.
+- Client (Cliente): Em uma arquitetura cliente/servidor, o cliente é um componente que solicita serviços ou recursos a um servidor. No contexto do Consul, o termo "cliente" refere-se aos serviços ou aplicativos que utilizam o Consul para descoberta de serviço e balanceamento de carga.
 
 Os clientes do Consul são componentes que fazem consultas ao registro de serviço para descobrir os endereços IP e portas dos serviços que desejam se conectar. Os clientes não participam diretamente no funcionamento do Consul ou no gerenciamento do cluster, eles apenas utilizam os dados fornecidos pelo Consul para encontrar e se comunicar com os serviços necessários.
 
-3. Server (Servidor):
-O servidor é um componente centralizado responsável por coordenar e gerenciar o cluster ou serviço. No contexto do Consul, o servidor do Consul é o componente central que mantém o registro de serviço, controla a replicação dos dados e coordena a comunicação entre os diferentes nós do cluster.
+- Server (Servidor): O servidor é um componente centralizado responsável por coordenar e gerenciar o cluster ou serviço. No contexto do Consul, o servidor do Consul é o componente central que mantém o registro de serviço, controla a replicação dos dados e coordena a comunicação entre os diferentes nós do cluster.
 
 Normalmente, um cluster Consul consiste em vários servidores para garantir a alta disponibilidade e a resiliência do sistema. Esses servidores formam um quórum e coordenam as decisões importantes do cluster, como a adição ou remoção de serviços, garantindo a consistência e confiabilidade das informações no registro de serviço.
 
@@ -86,13 +83,13 @@ Quando o Consul é executado em "dev mode", ele opera como um único nó em vez 
 
 Algumas características do "dev mode" no Consul incluem:
 
-1. Node Isolado: O Consul em "dev mode" funciona como um único nó isolado, facilitando o teste e o desenvolvimento em um ambiente controlado.
+- Node Isolado: O Consul em "dev mode" funciona como um único nó isolado, facilitando o teste e o desenvolvimento em um ambiente controlado.
 
-2. Armazenamento Local: Os dados do Consul são armazenados localmente no próprio nó, o que simplifica o gerenciamento de dados durante o desenvolvimento.
+- Armazenamento Local: Os dados do Consul são armazenados localmente no próprio nó, o que simplifica o gerenciamento de dados durante o desenvolvimento.
 
-3. Sem Persistência: No "dev mode", os dados não são persistidos entre as execuções. Isso significa que, quando o nó é reiniciado, todos os dados são perdidos. Isso é útil para cenários de desenvolvimento, mas não é adequado para ambientes de produção.
+- Sem Persistência: No "dev mode", os dados não são persistidos entre as execuções. Isso significa que, quando o nó é reiniciado, todos os dados são perdidos. Isso é útil para cenários de desenvolvimento, mas não é adequado para ambientes de produção.
 
-4. Simplicidade de Configuração: Ao operar em "dev mode", não é necessário configurar coisas como clustering, autenticação ou outras configurações avançadas.
+- Simplicidade de Configuração: Ao operar em "dev mode", não é necessário configurar coisas como clustering, autenticação ou outras configurações avançadas.
 
 Essa configuração é recomendada somente para fins de desenvolvimento e teste. Para implantações em produção ou ambientes de produção mais complexos, é essencial configurar o Consul em modo cluster, com múltiplos nós, para garantir alta disponibilidade e confiabilidade.
 
